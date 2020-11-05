@@ -10,3 +10,25 @@ function makeNegative(num) {
 }
 //testa
 Test.assertEquals(makeNegative(42), -42);
+
+//teste para quantidade do caminho 
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  mpg = distanceToPump - (25 * fuelLeft)
+  
+  if (mpg <= 0) {
+    return true
+  } else {
+    return false
+  }
+  
+  distanceToPump
+};
+//teste
+const assert = require("chai").assert;
+
+describe("zeroFill", function() {
+  it("Sample Tests", function() {
+    assert.equal(zeroFuel(50, 25, 2), true);
+    assert.equal(zeroFuel(100, 50, 1), false);
+  });
+});
