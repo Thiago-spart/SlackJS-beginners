@@ -32,3 +32,23 @@ describe("zeroFill", function() {
     assert.equal(zeroFuel(100, 50, 1), false);
   });
 });
+
+//cenaforo 
+function updateLight(current) {
+  
+  if (current == "green") {
+    return "yellow"
+  } else if (current == "yellow") {
+    return "red"
+  } else {
+    return "green"
+  }
+
+}
+
+//teste
+describe("Sample tests", function(){
+  Test.assertEquals(updateLight("green"), "yellow");
+  Test.assertEquals(updateLight("yellow"), "red");
+  Test.assertEquals(updateLight("red"), "green");
+});
