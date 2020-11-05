@@ -20,7 +20,25 @@
 		
 		document.write("Você provavelmente não deveria se casar com aquele(a) "+animal+". Você passará o resto da vida comendo "+food+" no meio do (a) "+place+".");	
 		
+		procurar encurtar
+		function century(year) {
+		  let r
+		  if (year >= 1 && year <= 100) {
+		    r = 1
+		  } else if (year >= 101 && year <=200) {
+		    Math.trunc(year); 
+		  } else if (year >= 201 && year <=300) {
+		    Math.trunc(year); 
+		  }
+		  
+		  return ;
+		}
 
+		Test.assertEquals(century(1705), 18, 'Testing for year 1705');
+		Test.assertEquals(century(1900), 19, 'Testing for year 1900');
+		Test.assertEquals(century(1601), 17, 'Testing for year 1601');
+		Test.assertEquals(century(2000), 20, 'Testing for year 2000');
+		Test.assertEquals(century(89), 1, 'Testing for year 89');
 
 	</script>
 
