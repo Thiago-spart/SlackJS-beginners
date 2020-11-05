@@ -5,7 +5,7 @@ function makeNegative(num) {
   } else if (num == 0) {
     return num
   } else { 
-    return -Math.abs(num)
+    return -Math.abs(num) // you can also use num * -1
   }
 }
 //testa
