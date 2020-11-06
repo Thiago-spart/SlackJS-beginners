@@ -78,3 +78,31 @@ describe('check for factor', function () {
     Test.assertEquals(checkForFactor(24617,3), false)
   })
 })
+
+//array's day
+function positiveSum(arr) {
+  let t = 0
+  
+  for (var i = 0; i < arr.length; i++) {   
+    if (arr[i] < 0) {
+      
+    } else {
+      t += arr[i] 
+    }
+  }
+  
+  if (t == 0 || t == undefined) {
+    return 0
+  } else {
+    return t
+  }
+  
+}
+
+//test
+Test.assertEquals(positiveSum([1,2,3,4,5]),15);
+Test.assertEquals(positiveSum([1,-2,3,4,5]),13);
+Test.assertEquals(positiveSum([]),0);
+Test.assertEquals(positiveSum([-1,-2,-3,-4,-5]),0);
+Test.assertEquals(positiveSum([-1,2,3,4,-5]),9);
+
