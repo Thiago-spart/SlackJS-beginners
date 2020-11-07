@@ -136,13 +136,14 @@ Test.assertEquals(squareSum([0, 3, 4, 5]), 50)
 //procura palavra e retorna um texto baseado no resultado (incompleto)
 function findNeedle(haystack) {
   let msg = "found the needle at position "
-  let p = 0
-  for (var i = 0; i < haystack.length; i++) {   
-    if (haystack[i] === "needle") {
-      p = haystack[i]  
-    }
-    return msg + p
+  let indices = [];
+  let elemento = "needle";
+  let idx = haystack.indexOf(elemento);
+  while (idx != -1) {
+    indices.push(idx);
+    idx = haystack.indexOf(elemento, idx + 1);
   }
+  return msg + indices 
 }
 
 //test
