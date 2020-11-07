@@ -187,3 +187,39 @@ Test.describe("Fix Timmys Counter", function() {
     Test.assertSimilar(createArray(5),[1,2,3,4,5]);
   });
 });
+
+function buscaNumeroPrimos(n) {
+
+  var numerosPrimos = [];
+
+  for (var i = 2; i < n; i++){   //Armazenou os números de 2 a 9
+     var quantidadeDeDivisores = 0; 
+     
+     var explica = (" Para i = " + i);
+     
+     for(var b = 2; b < i; b++) { //Armazenou os números de 2 a 9     
+        explica += (" ; b = " + b);
+        //se o resto dessa divisão for 0 é um divisor e incrementa quantidadeDeDivisores
+        if (i % b == 0) {
+           quantidadeDeDivisores ++;
+        }
+
+     }
+        console.log(" ");
+        explica +=(" quantidadeDeDivisores = " + quantidadeDeDivisores);
+     
+ console.log(explica);
+ 
+     //if (quantidadeDeDivisores  == 0) {
+     if (quantidadeDeDivisores % i == 0) {
+     
+        numerosPrimos.push(i);
+        console.log(numerosPrimos);
+        
+     }
+
+  }
+
+return numerosPrimos;
+
+}
