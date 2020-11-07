@@ -165,3 +165,25 @@ var haystack_3 = [1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234
 Test.assertEquals(findNeedle(haystack_1), 'found the needle at position 3')
 Test.assertEquals(findNeedle(haystack_2), 'found the needle at position 5') 
 Test.assertEquals(findNeedle(haystack_3), 'found the needle at position 30')
+
+//reportar bug e parar loop infinito 
+function createArray(number){
+  var newArray = [];
+  
+  for(var counter = 1; counter <= number; counter++){
+    newArray.push(counter);
+  }
+  
+  return newArray;
+}
+
+//test
+Test.describe("Fix Timmys Counter", function() {
+  Test.it("Fixed Tests", function() {
+    Test.assertSimilar(createArray(1),[1]);
+    Test.assertSimilar(createArray(2),[1,2]);
+    Test.assertSimilar(createArray(3),[1,2,3]);
+    Test.assertSimilar(createArray(4),[1,2,3,4]);
+    Test.assertSimilar(createArray(5),[1,2,3,4,5]);
+  });
+});
