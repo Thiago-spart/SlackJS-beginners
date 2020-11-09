@@ -188,38 +188,32 @@ Test.describe("Fix Timmys Counter", function() {
   });
 });
 
-function buscaNumeroPrimos(n) {
-
-  var numerosPrimos = [];
-
-  for (var i = 2; i < n; i++){   //Armazenou os números de 2 a 9
-     var quantidadeDeDivisores = 0; 
-     
-     var explica = (" Para i = " + i);
-     
-     for(var b = 2; b < i; b++) { //Armazenou os números de 2 a 9     
-        explica += (" ; b = " + b);
+//pega números de um array e incrementa e confere se é divisivel por divisor, após isso atribui a novo array como retorno(incompleto)
+function divisibleBy(numbers, divisor){
+  let div = []
+  for (let i = 0; i < numbers.lentgh; i++){   //Armazenou os números de 2 a 9
+    let quant = 0
+    for(var b = 1; b < i; b++) { //Armazenou os números de 1 a 9     
         //se o resto dessa divisão for 0 é um divisor e incrementa quantidadeDeDivisores
-        if (i % b == 0) {
-           quantidadeDeDivisores ++;
-        }
+      if (i % b == 0) {
+        quant ++;
+      }
 
-     }
-        console.log(" ");
-        explica +=(" quantidadeDeDivisores = " + quantidadeDeDivisores);
-     
- console.log(explica);
- 
-     //if (quantidadeDeDivisores  == 0) {
-     if (quantidadeDeDivisores % i == 0) {
-     
-        numerosPrimos.push(i);
-        console.log(numerosPrimos);
-        
-     }
+      }
 
-  }
-
-return numerosPrimos;
-
+      if (quant % i == 0) {
+        div.push(i);  
+      }
+    }
+  return div;
 }
+//teste
+Test.describe("Sample tests", function() {
+  Test.it("should pass sample tests", function() {
+    Test.assertDeepEquals(divisibleBy([1,2,3,4,5,6], 2), [2,4,6]);
+    Test.assertDeepEquals(divisibleBy([1,2,3,4,5,6], 3), [3,6]);
+    Test.assertDeepEquals(divisibleBy([0,1,2,3,4,5,6], 4), [0,4]);
+    Test.assertDeepEquals(divisibleBy([0], 4), [0]);
+    Test.assertDeepEquals(divisibleBy([1,3,5], 2), []);
+  })  
+})      
