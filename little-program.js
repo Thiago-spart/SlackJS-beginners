@@ -237,3 +237,21 @@ function test(n, expected) {
 Test.describe("basic tests", function(){
   test(10,23)
 })
+
+//a soma de números negativos e decimais
+function sum (numbers) {
+    //"use strict";
+  let soma = 0
+  for(let i = 0; i < numbers.length; i++) {
+    soma += numbers[i]
+    if (soma == 0 || soma == undefined) {
+      soma = 0
+    }  
+  }  
+  return soma
+};
+
+//test
+Test.assertEquals(sum([]), 0);
+Test.assertEquals(sum([1, 5.2, 4, 0, -1]), 9.2);
+
