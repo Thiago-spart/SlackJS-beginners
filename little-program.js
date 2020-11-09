@@ -255,3 +255,26 @@ function sum (numbers) {
 Test.assertEquals(sum([]), 0);
 Test.assertEquals(sum([1, 5.2, 4, 0, -1]), 9.2);
 
+//testa para ver se um número ou caractere existe dentor do array
+function check(a, x) {
+  let r = 0
+  
+  for (let i = 0; i < a.length; i++) {
+    
+    if (a[i] === x) {
+     r++ 
+    }
+  }
+  if (r == 1) {
+    return true
+  } else {
+    return false
+  }
+}
+//test
+Test.describe("Basic tests",_=>{
+Test.assertEquals(check([66, 101], 66), true);
+Test.assertEquals(check([80, 117, 115, 104, 45, 85, 112, 115], 45), true);
+Test.assertEquals(check(['t', 'e', 's', 't'], 'e'), true);
+Test.assertEquals(check(['what', 'a', 'great', 'kata'], 'kat'), false);
+})
