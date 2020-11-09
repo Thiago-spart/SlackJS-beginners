@@ -217,3 +217,23 @@ Test.describe("Sample tests", function() {
     Test.assertDeepEquals(divisibleBy([1,3,5], 2), []);
   })  
 })      
+
+//pega a soma de divisores entre 3 e 5 e retorna a soma 
+function solution(number){
+  let soma = 0 
+  for (let i = 0; i < number; i++) {
+    if (i % 3 == 0 || i % 5 == 0) {
+      soma += i
+    }
+  }
+  return soma
+}
+//teste
+function test(n, expected) {
+  let actual = solution(n)
+  Test.assertEquals(actual, expected, `Expected ${expected}, got ${actual}`)
+}
+
+Test.describe("basic tests", function(){
+  test(10,23)
+})
