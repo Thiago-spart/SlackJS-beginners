@@ -278,3 +278,25 @@ Test.assertEquals(check([80, 117, 115, 104, 45, 85, 112, 115], 45), true);
 Test.assertEquals(check(['t', 'e', 's', 't'], 'e'), true);
 Test.assertEquals(check(['what', 'a', 'great', 'kata'], 'kat'), false);
 })
+
+//confere se é um arco-íris de verdade
+function sortRainbow(colour){
+  let v = ['red','orange','yellow','green','blue','indigo','violet'] 
+  let r = 0
+  for (let i = 0; i < v.length; i++) {
+    if (colour[i] == v[i]) {
+      r++
+    } 
+  }
+  
+  if (r == 7) {
+    return true
+  } else {
+    return false
+  } 
+}
+//test
+Test.assertEquals(sortRainbow(['red','green']),false);
+Test.assertEquals(sortRainbow(['red','orange','yellow', 'green','blue','indigo',1]),false);
+Test.assertEquals(sortRainbow(['red','green','yellow','orange','blue','indigo','violet']),false);
+Test.assertEquals(sortRainbow(['red','orange','yellow','green','blue','indigo','violet']),true);
