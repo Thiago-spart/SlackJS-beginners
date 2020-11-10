@@ -300,3 +300,21 @@ Test.assertEquals(sortRainbow(['red','green']),false);
 Test.assertEquals(sortRainbow(['red','orange','yellow', 'green','blue','indigo',1]),false);
 Test.assertEquals(sortRainbow(['red','green','yellow','orange','blue','indigo','violet']),false);
 Test.assertEquals(sortRainbow(['red','orange','yellow','green','blue','indigo','violet']),true);
+
+//soma números e divide pela quant do array 
+var findAverage = function (nums) {
+  let s = 0
+  for (let i = 0; i < nums.length; i++) {
+    s += nums[i]
+    
+  }
+  return s/nums.length
+}
+
+//test
+describe('get average', function () {
+  it('should return the average', function () {
+    Test.assertEquals(findAverage([1]), 1)
+    Test.assertEquals(findAverage([1, 3, 5, 7]), 4)
+  })
+})
