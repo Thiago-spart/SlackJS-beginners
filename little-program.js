@@ -318,3 +318,36 @@ describe('get average', function () {
     Test.assertEquals(findAverage([1, 3, 5, 7]), 4)
   })
 })
+
+//volta no tempo
+function past(h, m, s){
+  //#Happy Coding! ^_^
+  let r = 0 
+  if (h < 23 && h > 0) {
+    r += h*60*60*1000
+  }
+  
+  if (m < 59 && m > 0) {
+    r += m*60*1000
+  }
+  
+  if (s < 59 && s > 0) {
+    r += s*1000
+  } 
+  
+  if (r == 0) {
+    
+  }
+  return r
+}
+
+//test
+Test.describe("Fixed Tests", _ => {
+  Test.it("Tests", __ => {
+    Test.assertEquals(past(0,1,1),61000)
+    Test.assertEquals(past(1,1,1),3661000)
+    Test.assertEquals(past(0,0,0),0)
+    Test.assertEquals(past(1,0,1),3601000)
+    Test.assertEquals(past(1,0,0),3600000)
+  });
+});
