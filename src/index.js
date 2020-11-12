@@ -6,10 +6,10 @@ let bolsaDeItens = [],
 	recompensas = [
 		'Chave',
 		'Duck, o Pato de Borracha',
-		'moeada'
-		'moeada'
-		'moeada'
-		'moeada'
+		'moeada',
+		'moeada',
+		'moeada',
+		'moeada',
 		'moeada'
 	]
 
