@@ -1,5 +1,5 @@
 //váriaveis
-const EXPLORADOR = Thiago
+const EXPLORADOR = 'Thiago'
 let bolsaDeItens = [],
 	moedas = 0,
 	energia = 5,
@@ -33,7 +33,7 @@ function pegarItem(item) {
 		moedas ++
 	} else {
 		console.log(EXPLORADOR +' ganhou um item')
-		bolsaDeItens[] = item 
+		bolsaDeItens.push(item)
 	}
 }
 
