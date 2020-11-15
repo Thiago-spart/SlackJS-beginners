@@ -6,29 +6,29 @@ let bolsaDeItens = [],
 	recompensas = [
 		'Chave',
 		'Duck, o Pato de Borracha',
-		'moeada',
-		'moeada',
-		'moeada',
-		'moeada',
-		'moeada'
+		'Moeda',
+		'Moeda',
+		'Moeda',
+		'Moeda',
+		'Moeda'
 	]
 
 function taverna() {
-	console.log(EXPLORADOR + ' entrou na caverna.')
+	console.log(EXPLORADOR + ' entrou na Taverna')
 
 	if (energia < 5) {
-		console.log(EXPLORADOR + ' está descansando.')
+		console.log(EXPLORADOR + ' está descansando')
 		while (energia < 5) {
 			energia++
 		}
-	} else {
-		return energia
-		console.log(EXPLORADOR + ' está revitalizado.')
+	}
+	if (energia == 5){
+		console.log(EXPLORADOR + ' está revitalizado')
 	}
 }
 
 function pegarItem(item) {
-	if (item == 'moeda') {
+	if (item == 'Moeda') {
 		console.log(EXPLORADOR +' ganhou uma moeda')
 		moedas ++
 	} else {
@@ -37,20 +37,22 @@ function pegarItem(item) {
 	}
 }
 
+//exploração
 function batalha() {
 	console.log(EXPLORADOR + ' encontrou um monstro')
+	let v = false
 	if (energia < 1) {
 		console.log(EXPLORADOR + ' fugiu para a Taverna')
-		return false
 	} else {
 		console.log(EXPLORADOR + ' derrotou o monstro')
 		energia--
-		return true
 		if (energia < 1) {
 			console.log(EXPLORADOR + ' fugiu para a Taverna') 
-			return false
+		} else {
+			v = true 
 		}
 	}
+	return v
 }
 
 function explorar() {
@@ -61,7 +63,7 @@ function explorar() {
 		return false
 	} else {
 		batalha()
-		if (batalha()) {
+		if (batalha() == true) {
 			roletarRecompensas() //função externa
 			return true;
 		} else {
@@ -73,10 +75,21 @@ function explorar() {
 
 function abrirBau() {
 	let pesquisa = bolsaDeItens.indexOf('Chave')
-	if (pesquisa == 1) {
+	if (!(pesquisa == -1)) {
 		console.log("Parabéns, você finalmente abriu o baú, é perigoso lá fora, leve seu certificado!")
 		return true
 	} else {
 		return false
 	}
 }
+/*
+
+Passo 5 - Fim da jornada
+
+Criar uma função chamada abrirBau
+SE houver uma "Chave" no array Bolsa de Itens:
+Use um console.log() com a mensagem "Parabéns, você finalmente abriu o baú, é perigoso lá fora, leve seu certificado!"
+Deverá retornar true;
+SENÃO:
+Retorne false;
+*/
