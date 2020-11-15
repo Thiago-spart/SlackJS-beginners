@@ -57,20 +57,20 @@ function batalha() {
 
 function explorar() {
 	console.log(EXPLORADOR + ' saiu para explorar')
+	let r = false
 	if (energia < 1) {
 		console.log(EXPLORADOR + ' não pode explorar')
 		taverna()
-		return false
 	} else {
-		batalha()
-		if (batalha() == true) {
+		r = batalha()
+		if (r == true) {
 			roletarRecompensas() //função externa
-			return true;
 		} else {
 			taverna()
-			return false
+			r = false
 		}
 	} 
+	return r
 }
 
 function abrirBau() {
