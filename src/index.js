@@ -1,5 +1,8 @@
 //váriaveis
-const EXPLORADOR = 'Thiago'
+/*
+	Na primeira parte é pedido para declarar as váriaveis 
+*/
+const EXPLORADOR = 'Thiago' 
 let bolsaDeItens = [],
 	moedas = 0,
 	energia = 5,
